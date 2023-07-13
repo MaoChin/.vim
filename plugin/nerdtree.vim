@@ -1,5 +1,5 @@
-" 设置快捷键 F2 就打开左边框
-noremap <silent> <F12> :NERDTreeToggle<Enter>
+" 设置快捷键 F12 就打开左边框
+noremap <silent><F12> :NERDTreeToggle<Enter>
 " 把左边框上面的那部分去掉
 let NERDTreeMinimalUI = 1
 let NREDTreeChDirMode = 2

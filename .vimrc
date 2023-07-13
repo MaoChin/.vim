@@ -4,6 +4,8 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
 Plug 'powerline/fonts'
 Plug 'preservim/nerdtree'
 Plug 'kien/ctrlp.vim'
@@ -144,3 +146,5 @@ autocmd WinLeave * setlocal nocursorline
 " 保存 buf 时把不可见字符清掉
 autocmd BufWritePre * :%s/\s\+$//e
 
+"Json 文件格式化：:FormatJson
+com! FormatJson %!python3 -m json.tool
