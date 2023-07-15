@@ -2,6 +2,7 @@
 "-                            vim plug(外挂)                          -"
 "----------------------------------------------------------------------"
 call plug#begin('~/.vim/plugged')
+let g:plug_url_format = 'git@github.com:%s.git'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -19,23 +20,13 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'dense-analysis/ale'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'Shougo/echodoc.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'brooth/far.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
-
-
-"-------------------------------------------------------------------------"
-"-                    YouCompleteMe 配置                                 -"
-"-------------------------------------------------------------------------"
-let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
-"从第二个键入字符就开始罗列匹配项
-let g:ycm_min_num_of_chars_for_completion=2
-"开启YCM标签引擎
-let g:ycm_collect_identifiers_from_tags=1
-"禁止缓存匹配项，每次都重新生成匹配项
-let g:ycm_cache_omnifunc=0
-"语法关键字补全
-let g:ycm_seed_identifiers_with_syntax=1
-
 
 
 "-------------------------------------------------------------------------"
