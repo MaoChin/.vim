@@ -17,7 +17,6 @@ Plug 'preservim/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'dense-analysis/ale'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'Shougo/echodoc.vim'
 Plug 'easymotion/vim-easymotion'
@@ -25,6 +24,15 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'brooth/far.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'lfv89/vim-interestingwords'
+Plug 'sbdchd/neoformat'
+Plug 'dense-analysis/ale'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim'
+
 
 call plug#end()
 
@@ -36,6 +44,9 @@ call plug#end()
 "for test
 
 "vim的一些简单配置
+
+"设置leader前置键
+let mapleader = "\<space>"
 "设置esc快速响应
 set ttimeoutlen=5
 "设置鼠标右键不进入visual模式
@@ -126,8 +137,12 @@ noremap <LEFT> <NOP>
 noremap <RIGHT> <NOP>
 inoremap <UP> <NOP>
 inoremap <DOWN> <NOP>
-inoremap <LEFT> <NOP>
-inoremap <RIGHT> <NOP>
+"inoremap <LEFT> <NOP>
+"inoremap <RIGHT> <NOP>
+imap <C-b> <LEFT>
+imap <C-f> <RIGHT>
+imap <C-a> <ESC>I
+imap <C-e> <ESC>A
 
 " 自动命令：当发生某个事件时自动执行某个命令
 " 切换页面时下划线跟着换
@@ -139,3 +154,4 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 "Json 文件格式化：:FormatJson
 com! FormatJson %!python3 -m json.tool
+
